@@ -1,0 +1,21 @@
+{
+    "name": "@srsergio/whatsapp-bot",
+    "version": "1.0.0",
+    "license": "MIT",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "scripts": {
+        "start_d": "ts-node index.ts",
+        "build": "tsc",
+        "start": "node dist/index.js",
+        "dev": "nodemon -x ts-node index.test.ts"
+    },
+    "dependencies": {
+        "axios": "^0.27.2"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.16",
+        "ts-node": "^10.8.1",
+        "typescript": "^2.7.2"
+    }
+}
