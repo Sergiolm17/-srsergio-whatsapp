@@ -9,12 +9,28 @@ interface sendMessage {
     gifPlayback?: boolean;
 }
 
+export interface Commet {
+    name: string;
+    time: number;
+}
+
+export interface RootObject {
+    status: string;
+    total: number;
+    validPhoneNumbers: number;
+    numbersFilter: number;
+    invalidPhoneNumbers: string[];
+    campaingid: string;
+    commets: Commet[];
+    instanceid: string;
+}
+
 export class Client {
     constructor(private token: string) {
         this.token = token;
     }
 
-    public async text(data: sendMessage): Promise<any> {
+    public async text(data: sendMessage): Promise<RootObject> {
         const body = Object.assign(
             {
                 data: {
@@ -30,7 +46,7 @@ export class Client {
         );
         return response.data;
     }
-    public async sticker(data: sendMessage): Promise<any> {
+    public async sticker(data: sendMessage): Promise<RootObject> {
         const body = Object.assign(
             {
                 data: {
@@ -46,7 +62,7 @@ export class Client {
         );
         return response.data;
     }
-    public async image(data: sendMessage): Promise<any> {
+    public async image(data: sendMessage): Promise<RootObject> {
         const body = Object.assign(
             {
                 data: {
@@ -62,7 +78,7 @@ export class Client {
         );
         return response.data;
     }
-    public async video(data: sendMessage): Promise<any> {
+    public async video(data: sendMessage): Promise<RootObject> {
         const body = Object.assign(
             {
                 data: {
