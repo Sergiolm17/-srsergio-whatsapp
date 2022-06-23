@@ -22,10 +22,6 @@ export interface Measure {
 export interface Message {
     status: string;
     steps: Step[];
-    total: number;
-    validPhoneNumbers: number;
-    numbersFilter: number;
-    invalidPhoneNumbers: any[];
     campaingid: string;
     measure: Measure[];
     percentage: number;
