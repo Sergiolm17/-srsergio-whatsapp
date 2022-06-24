@@ -74,5 +74,6 @@ export declare module ResButton {
 
     export interface RootObject {
         response: Response[];
+        status: string;
     }
 }

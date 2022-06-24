@@ -31,5 +31,6 @@ export declare module ResText {
 
     export interface RootObject {
         response: Response[];
+        status: string;
     }
 }
