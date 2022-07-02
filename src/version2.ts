@@ -64,12 +64,5 @@ const formatButton = (data: Button.Button) => {
                 title: data.title,
                 payload: data.payload,
             };
-        default:
-            return {
-                type: "replyButton",
-                id: data.id,
-                title: data.title,
-                payload: data.payload,
-            };
     }
 };

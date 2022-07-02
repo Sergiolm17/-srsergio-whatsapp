@@ -111,12 +111,5 @@ var formatButton = function (data) {
                 title: data.title,
                 payload: data.payload,
             };
-        default:
-            return {
-                type: "replyButton",
-                id: data.id,
-                title: data.title,
-                payload: data.payload,
-            };
     }
 };

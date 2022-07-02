@@ -8,7 +8,6 @@ export declare module Button {
     }
     export interface Button {
         type: "replyButton" | "urlButton" | "callButton";
-        id?: string;
         title?: string;
         payload?: string;
     }
