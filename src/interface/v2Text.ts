@@ -1,4 +1,9 @@
 export declare module Text {
+    export interface ReqButton {
+        from: string;
+        to: string[];
+        message: string;
+    }
     export interface RootObject {
         token: string;
         instanceid: string;

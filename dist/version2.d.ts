@@ -4,5 +4,5 @@ export declare class ClientV2 {
     private token;
     constructor(token: string);
     button(data: Button.ReqButton): Promise<ResButton.RootObject>;
-    text(data: Text.RootObject): Promise<ResText.RootObject>;
+    text(data: Text.ReqButton): Promise<ResText.RootObject>;
 }

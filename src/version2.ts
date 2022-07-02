@@ -22,7 +22,7 @@ export class ClientV2 {
         );
         return resData;
     }
-    public async text(data: Text.RootObject): Promise<ResText.RootObject> {
+    public async text(data: Text.ReqButton): Promise<ResText.RootObject> {
         const body = Object.assign(
             {
                 message: data.message,
