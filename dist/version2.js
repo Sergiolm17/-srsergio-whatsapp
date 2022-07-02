@@ -54,7 +54,7 @@ var ClientV2 = /** @class */ (function () {
                         body = Object.assign({
                             message: data.message,
                             footer: data.footer,
-                            buttons: data.buttons,
+                            buttons: data.buttons.map(function (item) { return formatButton(item); }),
                         }, createObject(data, this.token));
                         return [4 /*yield*/, axios_1.default.post(config_1.config.api.url + "/message/sendButton", body)];
                     case 1:
@@ -91,3 +91,32 @@ function createObject(data, token) {
         numbers: data.to,
     };
 }
+var formatButton = function (data) {
+    switch (data.type) {
+        case "replyButton":
+            return {
+                type: "replyButton",
+                id: data.title,
+                title: data.payload,
+            };
+        case "urlButton":
+            return {
+                type: "urlButton",
+                title: data.title,
+                payload: data.payload,
+            };
+        case "callButton":
+            return {
+                type: "callButton",
+                title: data.title,
+                payload: data.payload,
+            };
+        default:
+            return {
+                type: "replyButton",
+                id: data.id,
+                title: data.title,
+                payload: data.payload,
+            };
+    }
+};

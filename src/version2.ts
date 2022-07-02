@@ -12,7 +12,7 @@ export class ClientV2 {
             {
                 message: data.message,
                 footer: data.footer,
-                buttons: data.buttons,
+                buttons: data.buttons.map((item) => formatButton(item)),
             },
             createObject(data, this.token)
         );
@@ -43,3 +43,33 @@ function createObject(data: any, token: string) {
         numbers: data.to,
     };
 }
+
+const formatButton = (data: Button.Button) => {
+    switch (data.type) {
+        case "replyButton":
+            return {
+                type: "replyButton",
+                id: data.title,
+                title: data.payload,
+            };
+        case "urlButton":
+            return {
+                type: "urlButton",
+                title: data.title,
+                payload: data.payload,
+            };
+        case "callButton":
+            return {
+                type: "callButton",
+                title: data.title,
+                payload: data.payload,
+            };
+        default:
+            return {
+                type: "replyButton",
+                id: data.id,
+                title: data.title,
+                payload: data.payload,
+            };
+    }
+};

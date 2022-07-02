@@ -7,8 +7,8 @@ export declare module Button {
         buttons: Button[];
     }
     export interface Button {
-        type: string;
-        id: string;
+        type: "replyButton" | "urlButton" | "callButton";
+        id?: string;
         title?: string;
         payload?: string;
     }
